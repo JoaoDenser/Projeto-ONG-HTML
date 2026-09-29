@@ -1,4 +1,4 @@
-css
+
 * {
     box-sizing: border-box;
 }
@@ -27,17 +27,60 @@ header img {
     border-radius: 8px;
 }
 
+/* Menu de navegação */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 18px;
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #2d5a3c;
+    list-style: none;
+    padding: 10px;
+    min-width: 150px;
+    z-index: 10;
+}
+
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu {
+    display: block;
+}
+
+.submenu li {
+    padding: 8px;
+}
+
+/* Botão hambúrguer */
+.menu-hamburguer {
+    display: none;
+    background-color: transparent;
+    color: white;
+    font-size: 28px;
+    padding: 5px 10px;
 }
 
 main {
@@ -62,13 +105,15 @@ h3 {
     color: #2d5a3c;
 }
 
+/* Grid de 12 colunas */
 .cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     gap: 24px;
 }
 
 .card {
+    grid-column: span 6;
     background-color: white;
     padding: 20px;
     border-radius: 12px;
@@ -90,6 +135,7 @@ h3 {
     margin-top: 12px;
 }
 
+/* Formulário */
 form {
     display: flex;
     flex-direction: column;
@@ -163,10 +209,6 @@ footer {
         gap: 16px;
     }
 
-    .card {
-        grid-column: span 6;
-    }
-
     header img {
         width: 180px;
     }
@@ -179,8 +221,32 @@ footer {
         align-items: flex-start;
     }
 
-    .cards {
-        grid-template-columns: repeat(12, 1fr);
+    nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-hamburguer {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 12px;
+        padding-top: 15px;
+    }
+
+    .menu.ativo {
+        display: flex;
+    }
+
+    .submenu {
+        position: static;
+        background-color: #1e402a;
     }
 
     .card {
@@ -195,7 +261,6 @@ footer {
 /* Celulares pequenos */
 @media (max-width: 576px) {
     nav a {
-        margin: 0 8px 0 0;
         font-size: 14px;
     }
 
@@ -221,15 +286,4 @@ footer {
     button {
         width: 100%;
     }
-}
-
-   /* Grid de 12 colunas */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
-}
-
-.card {
-    grid-column: span 6;
 }
