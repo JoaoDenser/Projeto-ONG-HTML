@@ -1,0 +1,8 @@
+:root {
+    --espacamento-1: 8px;
+    --espacamento-2: 16px;
+    --espacamento-3: 24px;
+    --espacamento-4: 32px;
+    --espacamento-5: 40px;
+    --espacamento-6: 48px;
+}
