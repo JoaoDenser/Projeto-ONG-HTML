@@ -30,8 +30,14 @@ header img {
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 18px;
     font-weight: bold;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
 }
 
 main {
@@ -85,6 +91,9 @@ h3 {
 }
 
 form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     background-color: white;
     padding: 25px;
     border-radius: 12px;
