@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -390,4 +389,15 @@ footer {
 
 .toast p {
     margin-bottom: 0;
+}
+
+/* Ajuste do menu somente na página de cadastro */
+.pagina-cadastro header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.pagina-cadastro header nav a {
+    white-space: nowrap;
 }
