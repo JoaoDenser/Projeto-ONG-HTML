@@ -1,0 +1,7 @@
+:root {
+    --fonte-pequena: 14px;
+    --fonte-corpo: 16px;
+    --fonte-subtitulo: 20px;
+    --fonte-titulo: 28px;
+    --fonte-destaque: 36px;
+}
