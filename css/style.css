@@ -1,32 +1,54 @@
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7f2;
+    color: #263326;
     line-height: 1.6;
-    color: #333;
-    background-color: #f8faf8;
 }
 
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
 header {
-    background-color: #2d5a3c;
+    background-color: #1f5c38;
     color: white;
-    padding: 18px 7%;
+    padding: 15px 6%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 30px;
+}
+
+header > a {
+    display: flex;
+    align-items: center;
 }
 
 header img {
-    width: 220px;
-    background-color: white;
-    border-radius: 8px;
+    width: 90px;
+    height: auto;
 }
 
-/* Menu de navegação */
+
+/* ========================================
+   MENU
+======================================== */
+
 nav {
     display: flex;
     align-items: center;
@@ -35,19 +57,31 @@ nav {
 .menu {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 25px;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
-nav a {
+.menu li {
+    position: relative;
+}
+
+.menu a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 8px;
+    display: block;
 }
 
-/* Dropdown */
+.menu a:hover {
+    opacity: 0.8;
+}
+
+
+/* ========================================
+   SUBMENU
+======================================== */
+
 .dropdown {
     position: relative;
 }
@@ -57,347 +91,370 @@ nav a {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #2d5a3c;
+    min-width: 220px;
+    background-color: white;
     list-style: none;
-    padding: 10px;
-    min-width: 150px;
-    z-index: 10;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
-.dropdown:hover .submenu,
-.dropdown:focus-within .submenu {
+.submenu a {
+    color: #263326;
+    padding: 10px 15px;
+}
+
+.submenu a:hover {
+    background-color: #eef4ee;
+}
+
+.dropdown:hover .submenu {
     display: block;
 }
 
-.submenu li {
-    padding: 8px;
-}
 
-/* Botão hambúrguer */
+/* ========================================
+   BOTÃO MENU HAMBÚRGUER
+======================================== */
+
 .menu-hamburguer {
     display: none;
-    background-color: transparent;
+    background: transparent;
     color: white;
-    font-size: 28px;
-    padding: 5px 10px;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
 }
 
-/* Conteúdo principal */
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+======================================== */
+
 main {
-    max-width: 1100px;
-    margin: auto;
+    width: 100%;
+    min-height: 600px;
 }
+
+#conteudo {
+    width: 100%;
+}
+
+
+/* ========================================
+   SEÇÕES
+======================================== */
 
 section {
-    padding: 45px 7%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 25px;
+}
+
+section h1,
+section h2 {
+    color: #1f5c38;
+    margin-bottom: 20px;
+}
+
+section h1 {
+    font-size: 42px;
+}
+
+section h2 {
+    font-size: 32px;
+}
+
+section h3 {
+    color: #1f5c38;
+    margin: 15px 0 10px;
+}
+
+section p {
+    margin-bottom: 15px;
+}
+
+
+/* ========================================
+   HERO - PÁGINA INICIAL
+======================================== */
+
+.hero {
+    max-width: 100%;
+    padding: 0 0 60px;
+    text-align: center;
 }
 
 .hero img {
     width: 100%;
-    max-height: 420px;
+    max-height: 500px;
     object-fit: cover;
-    border-radius: 12px;
+    display: block;
 }
 
-h1,
-h2,
-h3 {
-    color: #2d5a3c;
+.hero h1 {
+    margin-top: 40px;
+    font-size: 44px;
 }
 
-/* Cards em grid de 12 colunas */
+.hero p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto 25px;
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.btn {
+    display: inline-block;
+    background-color: #2e7d4f;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: #245f3c;
+}
+
+
+/* ========================================
+   CARDS DOS PROJETOS
+======================================== */
+
 .cards {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .card {
-    grid-column: span 6;
+    flex: 1;
+    min-width: 280px;
     background-color: white;
+    border-radius: 10px;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px #0001;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
     width: 100%;
+    height: 220px;
+    object-fit: cover;
     border-radius: 8px;
 }
 
-/* Botão de destaque */
-.btn {
-    display: inline-block;
-    background-color: #569169;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 7px;
-    text-decoration: none;
-    margin-top: 12px;
-}
 
-/* Formulário */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+/* ========================================
+   FORMULÁRIO DE CADASTRO
+======================================== */
+
+.cadastro {
+    max-width: 800px;
+    margin: 40px auto;
     background-color: white;
-    padding: 25px;
+    padding: 40px;
     border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-fieldset {
-    border: 1px solid #cbd8cf;
-    border-radius: 8px;
+.cadastro h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.cadastro > p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+
+/* ========================================
+   CAMPOS DO FORMULÁRIO
+======================================== */
+
+.campo {
     margin-bottom: 20px;
-    padding: 20px;
 }
 
-legend {
-    font-weight: bold;
-    color: #2d5a3c;
-}
-
-label {
+.campo label {
     display: block;
-    margin-top: 12px;
+    margin-bottom: 7px;
     font-weight: bold;
+    color: #263326;
 }
 
-input,
-select {
+.campo input,
+.campo select {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #aaa;
+    padding: 12px;
+    border: 1px solid #b8c4b8;
     border-radius: 6px;
+    font-size: 16px;
+    background-color: white;
 }
 
-/* Botões e interatividade */
-button {
-    background-color: #2d5a3c;
-    color: white;
-    border: 0;
-    padding: 12px 22px;
-    border-radius: 7px;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: #2e7d4f;
+    box-shadow: 0 0 0 2px rgba(46, 125, 79, 0.15);
 }
 
-button:hover {
-    background-color: #569169;
-}
-
-button:focus {
-    outline: 3px solid #a8c9b2;
-    outline-offset: 2px;
-}
-
-button:active {
-    background-color: #1e402a;
-}
-
-button:disabled {
-    background-color: #aaa;
+.campo select:disabled {
+    background-color: #eeeeee;
     cursor: not-allowed;
 }
 
-/* Validação visual dos campos */
-input:focus,
-select:focus {
-    outline: none;
-    border: 2px solid #569169;
-    box-shadow: 0 0 5px #569169;
+
+/* ========================================
+   BOTÃO DO FORMULÁRIO
+======================================== */
+
+#formCadastro .btn {
+    width: 100%;
+    margin-top: 10px;
 }
 
-input:valid:not(:placeholder-shown) {
-    border-color: #2d8a4b;
+
+/* ========================================
+   MENSAGEM DO FORMULÁRIO
+======================================== */
+
+#mensagem {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
 }
 
-input:invalid:not(:placeholder-shown) {
-    border-color: #c0392b;
-}
 
-/* Rodapé */
+/* ========================================
+   RODAPÉ
+======================================== */
+
 footer {
-    background-color: #2d5a3c;
+    background-color: #183f29;
     color: white;
     text-align: center;
     padding: 25px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
-/* Desktop panorâmico */
-@media (min-width: 1200px) {
-    main {
-        max-width: 1200px;
-    }
+footer p {
+    margin: 0;
 }
 
-/* Desktop */
-@media (max-width: 1199px) {
-    main {
-        max-width: 100%;
-    }
-}
 
-/* Tablets */
-@media (max-width: 992px) {
-    .cards {
-        gap: 16px;
+/* ========================================
+   RESPONSIVIDADE - CELULAR
+======================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 20px;
+        flex-wrap: wrap;
     }
 
     header img {
-        width: 180px;
-    }
-}
-
-/* Celulares */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
+        width: 75px;
     }
 
     nav {
         width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
     }
 
     .menu-hamburguer {
         display: block;
+        margin-left: auto;
     }
 
     .menu {
         display: none;
-        flex-direction: column;
-        align-items: flex-start;
         width: 100%;
-        gap: 12px;
-        padding-top: 15px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        margin-top: 15px;
     }
 
     .menu.ativo {
         display: flex;
     }
 
-    .submenu {
-        position: static;
-        background-color: #1e402a;
+    .menu li {
+        width: 100%;
     }
 
-    .card {
-        grid-column: span 12;
+    .menu a {
+        padding: 12px;
+    }
+
+    .submenu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        background-color: #17472c;
+    }
+
+    .submenu a {
+        color: white;
+    }
+
+    .dropdown:hover .submenu {
+        display: none;
+    }
+
+    .dropdown:focus-within .submenu {
+        display: block;
     }
 
     section {
-        padding: 30px 5%;
-    }
-}
-
-/* Celulares pequenos */
-@media (max-width: 576px) {
-    nav a {
-        font-size: 14px;
+        padding: 40px 20px;
     }
 
-    header img {
-        width: 150px;
+    section h1 {
+        font-size: 32px;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+        margin-top: 30px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        padding: 0 15px;
+    }
+
+    .cards {
+        flex-direction: column;
     }
 
     .card {
-        padding: 15px;
-    }
-}
-
-/* Telas muito pequenas */
-@media (max-width: 400px) {
-    h1 {
-        font-size: 24px;
+        min-width: 100%;
     }
 
-    h2 {
-        font-size: 20px;
+    .cadastro {
+        margin: 20px;
+        padding: 25px 20px;
     }
 
-    button {
-        width: 100%;
-    }
-}
-
-/* Componentes de feedback */
-.feedback h3 {
-    margin-top: 25px;
-}
-
-/* Badges */
-.badge {
-    display: inline-block;
-    padding: 6px 12px;
-    margin: 5px 5px 5px 0;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.badge-sucesso {
-    background-color: #d4edda;
-    color: #155724;
-}
-
-.badge-info {
-    background-color: #d1ecf1;
-    color: #0c5460;
-}
-
-.badge-alerta {
-    background-color: #fff3cd;
-    color: #856404;
-}
-
-/* Alertas */
-.alerta {
-    padding: 15px;
-    margin: 12px 0;
-    border: 1px solid;
-    border-radius: 8px;
-}
-
-.alerta-sucesso {
-    background-color: #d4edda;
-    color: #155724;
-    border-color: #c3e6cb;
-}
-
-.alerta-erro {
-    background-color: #f8d7da;
-    color: #721c24;
-    border-color: #f5c6cb;
-}
-
-/* Toast */
-.toast {
-    max-width: 350px;
-    padding: 18px;
-    margin-top: 15px;
-    background-color: #2d5a3c;
-    color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.toast p {
-    margin-bottom: 0;
-}
-
-/* Ajuste do menu somente na página de cadastro */
-.pagina-cadastro header nav {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.pagina-cadastro header nav a {
-    white-space: nowrap;
 }
