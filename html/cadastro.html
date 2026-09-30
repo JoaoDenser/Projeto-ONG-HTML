@@ -2,76 +2,143 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Cadastro de Voluntário - Salvando a Mata</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
 </head>
 
-<body class="pagina-cadastro">
+<body>
 
 <header>
 
-    <a href="index.html">
-        <img src="../imagens/logo.png" alt="Logo da ONG Salvando a Mata">
+    <a href="../index.html">
+
+        <img
+            src="../imagens/logo.png"
+            alt="Logo da ONG Salvando a Mata">
+
     </a>
 
     <nav aria-label="Navegação principal">
-        <a href="index.html">Início</a>
-        <a href="index.html#sobre">Sobre</a>
-        <a href="index.html#projetos">Projetos</a>
+
+        <ul class="menu">
+
+            <li>
+                <a href="../index.html">
+                    Início
+                </a>
+            </li>
+
+            <li>
+                <a href="../index.html#sobre">
+                    Sobre
+                </a>
+            </li>
+
+            <li>
+                <a href="../index.html#projetos">
+                    Projetos
+                </a>
+            </li>
+
+            <li>
+                <a href="../index.html#voluntario">
+                    Seja voluntário
+                </a>
+            </li>
+
+        </ul>
+
     </nav>
 
 </header>
 
+
 <main>
 
-    <!-- Formulário de cadastro -->
-    <section>
+    <section class="cadastro">
 
-        <h1>Cadastro de voluntário</h1>
+        <h1>Cadastro de Voluntário</h1>
 
         <p>
-            Preencha seus dados para participar das ações
-            da ONG Salvando a Mata.
+            Preencha o formulário abaixo para fazer parte
+            das ações da ONG Salvando a Mata.
         </p>
 
-        <form action="#" method="post">
 
-            <fieldset>
+        <form id="formCadastro">
 
-                <legend>Dados pessoais</legend>
 
-                <label for="nome">Nome completo</label>
+            <!-- NOME -->
+
+            <div class="campo">
+
+                <label for="nome">
+                    Nome completo
+                </label>
 
                 <input
                     type="text"
                     id="nome"
                     name="nome"
-                    required
-                >
+                    placeholder="Digite seu nome completo"
+                    required>
 
-                <label for="email">E-mail</label>
+            </div>
+
+
+            <!-- E-MAIL -->
+
+            <div class="campo">
+
+                <label for="email">
+                    E-mail
+                </label>
 
                 <input
                     type="email"
                     id="email"
                     name="email"
-                    required
-                >
+                    placeholder="Digite seu e-mail"
+                    required>
 
-                <label for="nascimento">Data de nascimento</label>
+            </div>
+
+
+            <!-- DATA DE NASCIMENTO -->
+
+            <div class="campo">
+
+                <label for="nascimento">
+                    Data de nascimento
+                </label>
 
                 <input
                     type="date"
                     id="nascimento"
                     name="nascimento"
-                    required
-                >
+                    required>
 
-                <label for="cpf">CPF</label>
+            </div>
+
+
+            <!-- CPF -->
+
+            <div class="campo">
+
+                <label for="cpf">
+                    CPF
+                </label>
 
                 <input
                     type="text"
@@ -79,20 +146,18 @@
                     name="cpf"
                     placeholder="000.000.000-00"
                     maxlength="14"
-                    inputmode="numeric"
-                    pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
-                    title="Digite os 11 números do CPF."
-                    required
-                >
+                    required>
 
-            </fieldset>
+            </div>
 
 
-            <fieldset>
+            <!-- TELEFONE -->
 
-                <legend>Contato e endereço</legend>
+            <div class="campo">
 
-                <label for="telefone">Telefone</label>
+                <label for="telefone">
+                    Telefone
+                </label>
 
                 <input
                     type="tel"
@@ -100,13 +165,18 @@
                     name="telefone"
                     placeholder="(00) 00000-0000"
                     maxlength="15"
-                    inputmode="numeric"
-                    pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
-                    title="Digite o telefone com DDD."
-                    required
-                >
+                    required>
 
-                <label for="cep">CEP</label>
+            </div>
+
+
+            <!-- CEP -->
+
+            <div class="campo">
+
+                <label for="cep">
+                    CEP
+                </label>
 
                 <input
                     type="text"
@@ -114,19 +184,23 @@
                     name="cep"
                     placeholder="00000-000"
                     maxlength="9"
-                    inputmode="numeric"
-                    pattern="[0-9]{5}-[0-9]{3}"
-                    title="Digite os 8 números do CEP."
-                    required
-                >
+                    required>
 
-                <label for="estado">Estado</label>
+            </div>
+
+
+            <!-- ESTADO -->
+
+            <div class="campo">
+
+                <label for="estado">
+                    Estado
+                </label>
 
                 <select
                     id="estado"
                     name="estado"
-                    required
-                >
+                    required>
 
                     <option value="">
                         Carregando estados...
@@ -134,15 +208,22 @@
 
                 </select>
 
+            </div>
 
-                <label for="cidade">Cidade</label>
+
+            <!-- CIDADE -->
+
+            <div class="campo">
+
+                <label for="cidade">
+                    Cidade
+                </label>
 
                 <select
                     id="cidade"
                     name="cidade"
                     required
-                    disabled
-                >
+                    disabled>
 
                     <option value="">
                         Selecione primeiro o estado
@@ -150,61 +231,29 @@
 
                 </select>
 
-            </fieldset>
+            </div>
 
 
-            <button type="submit">
-                Enviar cadastro
+            <!-- BOTÃO -->
+
+            <button
+                type="submit"
+                class="btn">
+
+                Cadastrar como voluntário
+
             </button>
 
+
+            <!-- MENSAGEM -->
+
+            <div
+                id="mensagem"
+                role="alert"
+                aria-live="polite">
+            </div>
+
         </form>
-
-    </section>
-
-
-    <!-- Componentes de feedback -->
-    <section class="feedback">
-
-        <h2>Componentes de feedback</h2>
-
-
-        <h3>Badges</h3>
-
-        <span class="badge badge-sucesso">
-            Inscrições abertas
-        </span>
-
-        <span class="badge badge-info">
-            Projeto ambiental
-        </span>
-
-        <span class="badge badge-alerta">
-            Vagas limitadas
-        </span>
-
-
-        <h3>Alertas</h3>
-
-        <div class="alerta alerta-sucesso">
-            Cadastro realizado com sucesso!
-        </div>
-
-        <div class="alerta alerta-erro">
-            Verifique os campos obrigatórios antes de continuar.
-        </div>
-
-
-        <h3>Notificação toast</h3>
-
-        <div class="toast">
-
-            <strong>Salvando a Mata</strong>
-
-            <p>
-                Seu cadastro foi enviado com sucesso!
-            </p>
-
-        </div>
 
     </section>
 
@@ -220,7 +269,6 @@
 </footer>
 
 
-<!-- Arquivo JavaScript externo -->
 <script src="../js/cadastro.js"></script>
 
 </body>
