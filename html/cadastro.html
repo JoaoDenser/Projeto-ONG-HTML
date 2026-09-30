@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -22,40 +23,22 @@
 <header>
 
     <a href="../index.html">
-
         <img
             src="../imagens/logo.png"
             alt="Logo da ONG Salvando a Mata">
-
     </a>
 
     <nav aria-label="Navegação principal">
 
         <ul class="menu">
 
-            <li>
-                <a href="../index.html">
-                    Início
-                </a>
-            </li>
+            <li><a href="../index.html">Início</a></li>
 
-            <li>
-                <a href="../index.html#sobre">
-                    Sobre
-                </a>
-            </li>
+            <li><a href="../index.html#sobre">Sobre</a></li>
 
-            <li>
-                <a href="../index.html#projetos">
-                    Projetos
-                </a>
-            </li>
+            <li><a href="../index.html#projetos">Projetos</a></li>
 
-            <li>
-                <a href="../index.html#voluntario">
-                    Seja voluntário
-                </a>
-            </li>
+            <li><a href="../index.html#voluntario">Seja voluntário</a></li>
 
         </ul>
 
@@ -66,17 +49,21 @@
 
 <main>
 
-    <section class="cadastro">
+    <section
+        class="cadastro"
+        aria-labelledby="titulo-cadastro">
 
-        <h1>Cadastro de Voluntário</h1>
+        <h1 id="titulo-cadastro">Cadastro de Voluntário</h1>
 
-        <p>
+        <p id="orientacao-cadastro">
             Preencha o formulário abaixo para fazer parte
             das ações da ONG Salvando a Mata.
         </p>
 
 
-        <form id="formCadastro">
+        <form
+            id="formCadastro"
+            aria-describedby="orientacao-cadastro">
 
 
             <!-- NOME -->
@@ -92,6 +79,7 @@
                     id="nome"
                     name="nome"
                     placeholder="Digite seu nome completo"
+                    autocomplete="name"
                     required>
 
             </div>
@@ -110,6 +98,7 @@
                     id="email"
                     name="email"
                     placeholder="Digite seu e-mail"
+                    autocomplete="email"
                     required>
 
             </div>
@@ -127,6 +116,7 @@
                     type="date"
                     id="nascimento"
                     name="nascimento"
+                    autocomplete="bday"
                     required>
 
             </div>
@@ -146,7 +136,13 @@
                     name="cpf"
                     placeholder="000.000.000-00"
                     maxlength="14"
+                    inputmode="numeric"
+                    aria-describedby="ajuda-cpf"
                     required>
+
+                <small id="ajuda-cpf">
+                    Digite seu CPF no formato 000.000.000-00.
+                </small>
 
             </div>
 
@@ -165,7 +161,13 @@
                     name="telefone"
                     placeholder="(00) 00000-0000"
                     maxlength="15"
+                    autocomplete="tel"
+                    aria-describedby="ajuda-telefone"
                     required>
+
+                <small id="ajuda-telefone">
+                    Digite o telefone com DDD.
+                </small>
 
             </div>
 
@@ -184,7 +186,14 @@
                     name="cep"
                     placeholder="00000-000"
                     maxlength="9"
+                    inputmode="numeric"
+                    autocomplete="postal-code"
+                    aria-describedby="ajuda-cep"
                     required>
+
+                <small id="ajuda-cep">
+                    Digite o CEP no formato 00000-000.
+                </small>
 
             </div>
 
@@ -200,6 +209,7 @@
                 <select
                     id="estado"
                     name="estado"
+                    autocomplete="address-level1"
                     required>
 
                     <option value="">
@@ -222,6 +232,7 @@
                 <select
                     id="cidade"
                     name="cidade"
+                    autocomplete="address-level2"
                     required
                     disabled>
 
@@ -249,7 +260,7 @@
 
             <div
                 id="mensagem"
-                role="alert"
+                role="status"
                 aria-live="polite">
             </div>
 
