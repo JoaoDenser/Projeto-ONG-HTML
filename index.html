@@ -4,59 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Salvando a Mata - ONG</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <header>
 
-    <a href="index.html">
-        <img src="../imagens/logo.png" alt="Logo da ONG Salvando a Mata">
+    <a href="#inicio" data-rota="inicio">
+        <img
+            src="imagens/logo.png"
+            alt="Logo da ONG Salvando a Mata">
     </a>
 
     <nav aria-label="Navegação principal">
 
-        <!-- Botão do menu hambúrguer -->
         <button
             class="menu-hamburguer"
-            onclick="toggleMenu()"
             aria-label="Abrir menu"
             aria-expanded="false"
             aria-controls="menu">
             ☰
         </button>
 
-        <!-- Menu principal -->
         <ul class="menu" id="menu">
 
             <li>
-                <a href="index.html">Início</a>
+                <a href="#inicio" data-rota="inicio">
+                    Início
+                </a>
             </li>
 
             <li>
-                <a href="#sobre">Sobre</a>
+                <a href="#sobre" data-rota="sobre">
+                    Sobre
+                </a>
             </li>
 
-            <!-- Menu dropdown -->
             <li class="dropdown">
 
-                <a href="#projetos">
+                <a href="#projetos" data-rota="projetos">
                     Projetos ▾
                 </a>
 
                 <ul class="submenu">
 
                     <li>
-                        <a href="#projetos">
+                        <a href="#projetos" data-rota="projetos">
                             Preservação ambiental
                         </a>
                     </li>
 
                     <li>
-                        <a href="#projetos">
+                        <a href="#projetos" data-rota="projetos">
                             Voluntariado
                         </a>
                     </li>
@@ -66,7 +69,7 @@
             </li>
 
             <li>
-                <a href="cadastro.html">
+                <a href="#voluntario" data-rota="voluntario">
                     Seja voluntário
                 </a>
             </li>
@@ -80,81 +83,7 @@
 
 <main>
 
-    <!-- Seção principal -->
-    <section class="hero">
-
-        <img
-            src="../imagens/banner.jpg"
-            alt="Imagem representando a preservação da natureza">
-
-        <h1>Salvando a Mata</h1>
-
-        <p>
-            Juntos podemos cuidar da natureza e transformar o futuro.
-        </p>
-
-        <a class="btn" href="cadastro.html">
-            Quero ser voluntário
-        </a>
-
-    </section>
-
-
-    <!-- Sobre a ONG -->
-    <section id="sobre">
-
-        <h2>Sobre a ONG</h2>
-
-        <p>
-            A Salvando a Mata é uma organização criada para promover
-            a preservação do meio ambiente, incentivar ações sustentáveis
-            e conscientizar a comunidade sobre a importância das florestas.
-        </p>
-
-    </section>
-
-
-    <!-- Projetos -->
-    <section id="projetos">
-
-        <h2>Nossos projetos</h2>
-
-        <div class="cards">
-
-            <article class="card">
-
-                <img
-                    src="../imagens/projetos.jpg"
-                    alt="Imagem representando projetos ambientais">
-
-                <h3>Preservação ambiental</h3>
-
-                <p>
-                    Desenvolvemos ações para proteger áreas verdes
-                    e incentivar a preservação da natureza.
-                </p>
-
-            </article>
-
-
-            <article class="card">
-
-                <img
-                    src="../imagens/voluntarios.png"
-                    alt="Imagem representando voluntários">
-
-                <h3>Voluntariado</h3>
-
-                <p>
-                    Pessoas podem participar de campanhas e ações
-                    em benefício do meio ambiente.
-                </p>
-
-            </article>
-
-        </div>
-
-    </section>
+    <div id="conteudo"></div>
 
 </main>
 
@@ -168,8 +97,7 @@
 </footer>
 
 
-<!-- JavaScript externo do menu -->
-<script src="../js/menu.js"></script>
+<script src="js/menu.js"></script>
 
 </body>
 
