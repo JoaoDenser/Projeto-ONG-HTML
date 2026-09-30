@@ -32,6 +32,7 @@ if (botaoMenu && menu) {
 const conteudo = document.getElementById("conteudo");
 
 
+// Conteúdos das páginas
 const paginas = {
 
     inicio: `
@@ -47,7 +48,10 @@ const paginas = {
                 Juntos podemos cuidar da natureza e transformar o futuro.
             </p>
 
-            <a class="btn" href="#voluntario" data-rota="voluntario">
+            <a
+                class="btn"
+                href="#voluntario"
+                data-rota="voluntario">
                 Quero ser voluntário
             </a>
 
@@ -138,7 +142,7 @@ const paginas = {
 
 
 // ========================================
-// FUNÇÃO DE RENDERIZAÇÃO
+// RENDERIZAÇÃO DO CONTEÚDO
 // ========================================
 
 function renderizar(pagina) {
@@ -157,7 +161,7 @@ function renderizar(pagina) {
 
 
 // ========================================
-// ROTEAMENTO
+// NAVEGAÇÃO DA SPA
 // ========================================
 
 function navegar(pagina) {
@@ -174,50 +178,46 @@ function navegar(pagina) {
 
 
 // ========================================
-// INTERCEPTAÇÃO DOS LINKS
+// CLIQUES NOS LINKS
 // ========================================
 
-function configurarLinks() {
+document.addEventListener("click", function (event) {
 
-    document
-        .querySelectorAll("[data-rota]")
-        .forEach(link => {
+    const link = event.target.closest("[data-rota]");
 
-            link.addEventListener("click", function (event) {
+    if (!link) {
+        return;
+    }
 
-                event.preventDefault();
+    event.preventDefault();
 
-                const pagina = this.dataset.rota;
+    const pagina = link.dataset.rota;
 
-                navegar(pagina);
+    navegar(pagina);
 
 
-                // Fecha o menu no celular
-                if (menu && botaoMenu) {
+    // Fecha o menu no celular
+    if (menu && botaoMenu) {
 
-                    menu.classList.remove("ativo");
+        menu.classList.remove("ativo");
 
-                    botaoMenu.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
+        botaoMenu.setAttribute(
+            "aria-expanded",
+            "false"
+        );
 
-                    botaoMenu.setAttribute(
-                        "aria-label",
-                        "Abrir menu"
-                    );
+        botaoMenu.setAttribute(
+            "aria-label",
+            "Abrir menu"
+        );
 
-                }
+    }
 
-            });
-
-        });
-
-}
+});
 
 
 // ========================================
-// BOTÕES VOLTAR E AVANÇAR
+// BOTÕES VOLTAR / AVANÇAR DO NAVEGADOR
 // ========================================
 
 window.addEventListener("popstate", function () {
@@ -231,12 +231,10 @@ window.addEventListener("popstate", function () {
 
 
 // ========================================
-// INICIALIZAÇÃO DA SPA
+// CARREGAMENTO INICIAL
 // ========================================
 
 const paginaInicial =
     location.hash.replace("#", "") || "inicio";
 
 renderizar(paginaInicial);
-
-configurarLinks();
